@@ -11,9 +11,21 @@ includes:
     optional: true
 
   jojo-cli:
-    aliases: [ 'jc', ]
+    aliases: [ 'jcl', ]
     taskfile: packages/jojo-cli
     dir: packages/jojo-cli
+    optional: true
+
+  jojo-core:
+    aliases: [ 'jco', ]
+    taskfile: packages/jojo-core
+    dir: packages/jojo-core
+    optional: true
+
+  jojo-http:
+    aliases: [ 'jh', ]
+    taskfile: packages/jojo-http
+    dir: packages/jojo-http
     optional: true
 
 #

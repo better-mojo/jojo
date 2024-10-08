@@ -1,0 +1,22 @@
+version: "3"
+
+tasks:
+  fmt:
+    cmds:
+      - magic run mojo format -l 120 .
+
+  pkg:
+    aliases: [ 'pm', 'magic' ]
+    cmds:
+      - magic {{.CLI_ARGS}}
+
+  dev:
+    aliases: [ 'd', ]
+    cmds:
+      - magic run mojo src/run.mojo
+
+  venv:
+    cmds:
+      - magic shell
+      - mojo --version
+    ignore_error: true
