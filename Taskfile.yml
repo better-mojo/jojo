@@ -1,0 +1,108 @@
+version: "3"
+
+#
+# sub namespace: https://taskfile.dev/#/usage?id=including-other-taskfiles
+#
+includes:
+  jojo:
+    aliases: [ 'j', 'jo']
+    taskfile: packages/jojo
+    dir: packages/jojo
+    optional: true
+
+  jojo-cli:
+    aliases: [ 'jc', ]
+    taskfile: packages/jojo-cli
+    dir: packages/jojo-cli
+    optional: true
+
+#
+# global vars: https://taskfile.dev/#/usage?id=variables
+#
+vars:
+  VAR1: "some-var"
+
+# global env:
+env:
+  ENV1: testing
+
+# env file:
+dotenv:
+  - .env
+
+################################################################################################
+
+tasks:
+  init:
+    cmds:
+      - cp .env.local .env
+      - task: install
+      - task: install:pkg
+
+  setup:
+    cmds:
+      - task: install
+
+  install:
+    aliases: [ 'i' ]
+    cmds:
+      - task: install:magic
+
+  install:magic:
+    aliases: [ 'ipm', 'ipkg' ]
+    cmds:
+      - curl -ssL https://magic.modular.com/70e02269-abfd-4ed6-aac8-fc2b7d61b954 | bash
+
+  # activate mojo venv:
+  venv:
+    cmds:
+      - magic shell
+
+  fmt:
+    cmds:
+      - magic run mojo format -l 120
+
+
+  ################################################################################
+
+  new:
+    aliases: [ 'n' ]
+    cmds:
+      - magic init {{.CLI_ARGS}} --format mojoproject
+    dir: 'packages/'
+
+  ################################################################################
+
+  count:
+    cmds:
+      - tokei # 代码统计: https://github.com/XAMPPRocky/tokei
+
+  ##################################################################################################
+
+  quick:
+    aliases: [ 'q' ]
+    cmds:
+      - task: cc
+      - task: push
+
+  cc:
+    cmds:
+      - task: commit
+      - task: commit
+
+  commit:
+    aliases: [ 'c' ]
+    cmds:
+      - git add .
+      - git commit -m "update"
+    ignore_error: true
+
+  pull:
+    cmds:
+      - git config pull.rebase false
+      - git pull origin main
+
+  push:
+    cmds:
+      - git push origin main --tags
+      - repo_url=`git remote -v | grep push | awk -F ":" '{print $2}' | awk -F ".git" '{print "https://github.com/"$1}'`; open $repo_url
