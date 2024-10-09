@@ -10,7 +10,7 @@
     🐝 A Mojo Web Microservice framework 🔥
     <br/>
 
-![Written in Mojo][language-shield]
+![Mojo Version][language-shield]
 [![MIT License][license-shield]][license-url]
 [![Pixi Badge](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/prefix-dev/pixi/main/assets/badge/v0.json)](https://pixi.sh)
 <br/>
@@ -98,7 +98,7 @@
 
 [14]: https://github.com/sanic-org/sanic
 
-[language-shield]: https://img.shields.io/badge/language-mojo-orange
+[language-shield]: https://img.shields.io/badge/Mojo%F0%9F%94%A5-24.5-orange
 
 [license-shield]: https://img.shields.io/github/license/better-mojo/jojo?logo=github
 
