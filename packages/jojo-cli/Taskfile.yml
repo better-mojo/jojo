@@ -43,3 +43,10 @@ tasks:
     cmds:
       - mkdir -p build/
       - magic run mojo package src/ -o build/jojo-cli.mojopkg
+
+  init:
+    cmds:
+      - magic project channel add "conda-forge"
+      - magic project channel add "https://conda.modular.com/max"
+      - magic project channel add "https://repo.prefix.dev/mojo-community"
+      - magic project channel add "https://repo.prefix.dev/jojo"
