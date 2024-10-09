@@ -60,7 +60,27 @@ tasks:
   release:
     aliases: [ "rel" ]
     cmds:
+      - mkdir -p build/
+      - magic run build
+      - magic run rattler-build upload prefix -c "jojo"
+    ignore_error: true
+
+  publish:
+    aliases: [ "pub", "up" ]
+    cmds:
+      - echo $PREFIX_DEV_API_KEY
+      - |
+        magic run rattler-build upload prefix -c "jojo" \
+          --api-key=$PREFIX_DEV_API_KEY \
+          output/osx-arm64/jojo-core-0.1.1-h60d57d3_0.conda
+
+  release:clean:
+    aliases: [ "rel:c" ]
+    cmds:
       - rm -rf output/
       - mkdir -p build/
       - magic run build
     ignore_error: true
+
+
+
