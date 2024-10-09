@@ -3,7 +3,7 @@ authors = ["hhglory <hhglory@outlook.com>"]
 channels = ["conda-forge", "https://conda.modular.com/max", "https://repo.prefix.dev/mojo-community", "https://repo.prefix.dev/jojo"]
 description = "Add a short description here"
 name = "jojo-cli"
-platforms = ["osx-arm64", "linux-64"]
+platforms = ["osx-arm64",]
 version = "0.1.0"
 
 #
