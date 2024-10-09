@@ -3,10 +3,30 @@ authors = ["hhglory <hhglory@outlook.com>"]
 channels = ["conda-forge", "https://conda.modular.com/max"]
 description = "Add a short description here"
 name = "jojo-core"
-platforms = ["osx-arm64"]
+platforms = ["osx-arm64", "linux-64"]
 version = "0.1.0"
 
 [tasks]
 
 [dependencies]
 max = ">=24.5.0,<25"
+
+[feature.test.tasks]
+test = "pytest"
+
+[feature.test.pypi-dependencies]
+pytest = ">=8.3.3, <9"
+
+[feature.dev.tasks]
+dev = ""
+
+[feature.dev.pypi-dependencies]
+pytest = ">=8.3.3, <9"
+
+[feature.dev.dependencies]
+rattler-build = ">=0.24.0,<0.25"
+
+[environments]
+default = { solve-group = "default" }
+test = { features = ["test"], solve-group = "default" }
+dev = { features = ["dev"], solve-group = "default" }

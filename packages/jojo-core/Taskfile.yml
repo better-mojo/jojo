@@ -20,3 +20,24 @@ tasks:
       - magic shell
       - mojo --version
     ignore_error: true
+
+  init:test:
+    aliases: ["it"]
+    cmds:
+      - magic task add test "pytest" --feature test
+      - magic project environment add default --solve-group default
+      - magic project environment add test --feature test --solve-group default
+      - magic add pytest --pypi --feature test
+
+  init:dev:
+    aliases: ["id"]
+    cmds:
+      - magic task add dev "" --feature dev
+      - magic project environment add default --solve-group default
+      - magic project environment add dev --feature dev --solve-group default
+      - magic add pytest --pypi --feature dev
+
+  add:dev:
+    aliases: ["ad"]
+    cmds:
+      - magic add rattler-build --feature dev
