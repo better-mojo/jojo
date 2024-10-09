@@ -7,7 +7,7 @@ platforms = ["osx-arm64", "linux-64"]
 version = "0.1.0"
 
 [tasks]
-build = { cmd = "rattler-build build --recipe . -c https://conda.modular.com/max -c conda-forge --skip-existing=all" }
+build = { cmd = "rattler-build build --recipe recipes/ -c https://conda.modular.com/max -c conda-forge --skip-existing=all" }
 publish = { cmd = "bash scripts/publish.sh", env = { PREFIX_API_KEY = "$PREFIX_API_KEY" } }
 package = { cmd = "mojo package src/ -o build/jojo-core.mojopkg"}
 
