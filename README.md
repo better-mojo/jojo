@@ -44,7 +44,30 @@
 
 ## Quick Start
 
-- TODO
+1. Add the `jojo` channel to your `mojoproject.toml`, e.g:
+   ```toml
+   [project]
+   channels = ["conda-forge", "https://conda.modular.com/max", "https://repo.prefix.dev/jojo"]
+   ```
+
+or use [magic](https://docs.modular.com/magic/):
+
+```ruby
+magic project channel add "https://repo.prefix.dev/jojo" 
+```
+
+2. Add `jojo_core` as a dependency:
+   ```toml
+   [dependencies]
+   jojo_core = ">=0.1.1"
+   ```
+
+or use [magic](https://docs.modular.com/magic/):
+
+```ruby
+magic add jojo_core
+ 
+```
 
 ## Reference
 
