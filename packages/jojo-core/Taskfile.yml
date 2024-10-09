@@ -1,5 +1,8 @@
 version: "3"
 
+vars:
+  MAX_CHANNEL: "https://conda.modular.com/max"
+
 tasks:
   fmt:
     cmds:
@@ -21,8 +24,13 @@ tasks:
       - mojo --version
     ignore_error: true
 
+  install:
+    aliases: [ "i" ]
+    cmds:
+      - curl -fsSL https://pixi.sh/install.sh | bash
+
   init:test:
-    aliases: ["it"]
+    aliases: [ "it" ]
     cmds:
       - magic task add test "pytest" --feature test
       - magic project environment add default --solve-group default
@@ -30,7 +38,7 @@ tasks:
       - magic add pytest --pypi --feature test
 
   init:dev:
-    aliases: ["id"]
+    aliases: [ "id" ]
     cmds:
       - magic task add dev "" --feature dev
       - magic project environment add default --solve-group default
@@ -38,6 +46,21 @@ tasks:
       - magic add pytest --pypi --feature dev
 
   add:dev:
-    aliases: ["ad"]
+    aliases: [ "ad" ]
     cmds:
       - magic add rattler-build --feature dev
+      - pixi global install rattler-build
+
+  package:
+    aliases: [ "pack" ]
+    cmds:
+      - mkdir -p build/
+      - magic run package
+
+  release:
+    aliases: [ "rel" ]
+    cmds:
+      - rm -rf output/
+      - mkdir -p build/
+      - magic run build
+    ignore_error: true
