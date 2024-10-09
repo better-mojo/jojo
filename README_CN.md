@@ -1,6 +1,25 @@
-# jojo
+<a name="readme-top"></a>
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+
+<h3 align="center">JoJo</h3>
+
+  <p align="center">
+    🐝 A Mojo Web Microservice framework 🔥
+    <br/>
+
+![Written in Mojo][language-shield]
+[![MIT License][license-shield]][license-url]
+[![Pixi Badge](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/prefix-dev/pixi/main/assets/badge/v0.json)](https://pixi.sh)
+<br/>
+[![Contributors Welcome][contributors-shield]][contributors-url]
 
 简体中文 | [English](README.md)
+
+  </p>
+</div>
 
 ## 简介
 
@@ -78,6 +97,18 @@
 [13]: https://github.com/kataras/iris
 
 [14]: https://github.com/sanic-org/sanic
+
+[language-shield]: https://img.shields.io/badge/language-mojo-orange
+
+[license-shield]: https://img.shields.io/github/license/better-mojo/jojo?logo=github
+
+[license-url]: https://github.com/better-mojo/jojo/blob/main/LICENSE
+
+[contributors-shield]: https://img.shields.io/badge/contributors-welcome!-blue
+
+[contributors-url]: https://github.com/better-mojo/jojo#contributing
+
+[jojo-core]: https://prefix.dev/channels/jojo/packages/jojo-core
 
 ### Docs
 

@@ -1,9 +1,3 @@
-# jojo
-
-web framework, like fastapi
-
-[简体中文](README_CN.md) | English
-
 <a name="readme-top"></a>
 
 <!-- PROJECT LOGO -->
@@ -22,11 +16,12 @@ web framework, like fastapi
 <br/>
 [![Contributors Welcome][contributors-shield]][contributors-url]
 
+[简体中文](README_CN.md) | English
 
   </p>
 </div>
 
-## Intro
+## Overview
 
 - a `Mojo` Web Microservice framework, like `FastApi/Go-Micro/Volo`.
 
@@ -92,7 +87,6 @@ web framework, like fastapi
 
 [14]: https://github.com/sanic-org/sanic
 
-
 [language-shield]: https://img.shields.io/badge/language-mojo-orange
 
 [license-shield]: https://img.shields.io/github/license/better-mojo/jojo?logo=github
@@ -103,5 +97,7 @@ web framework, like fastapi
 
 [contributors-url]: https://github.com/better-mojo/jojo#contributing
 
-
 [jojo-core]: https://prefix.dev/channels/jojo/packages/jojo-core
+
+
+
