@@ -65,8 +65,25 @@ tasks:
       - magic run rattler-build upload prefix -c "jojo"
     ignore_error: true
 
+  #
+  # ref: https://taskfile.dev/usage/#looping-over-variables
+  #
   publish:
-    aliases: [ "pub", "up" ]
+    aliases: [ "up", "pub", "pub:auto" ]
+    vars:
+      UP_PKGS:
+        sh: find . -name "*.conda" -type f
+    cmds:
+      - echo {{ .UP_PKGS }}
+      - for: { var: UP_PKGS }
+        cmd:
+          |
+          magic run rattler-build upload prefix -c "jojo" \
+            --api-key=$PREFIX_DEV_API_KEY \
+            {{.ITEM}}
+
+  publish:manual:
+    aliases: [ "pub:m", "up:m" ]
     cmds:
       - echo $PREFIX_DEV_API_KEY
       - |
