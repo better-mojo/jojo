@@ -1,5 +1,5 @@
-from .core import cli
+from core import cli
 
 fn main():
-    cli()
+    _ = cli()
 

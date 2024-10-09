@@ -15,6 +15,12 @@ tasks:
     cmds:
       - magic run mojo src/run.mojo
 
+  package:
+    aliases: [ "p", "pack" ]
+    cmds:
+      - mkdir -p build/
+      - magic run mojo package src/ -o build/jojo-http.mojopkg
+
   venv:
     cmds:
       - magic shell

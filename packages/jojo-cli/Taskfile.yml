@@ -19,3 +19,21 @@ tasks:
     aliases: [ "t" ]
     cmds:
       - magic run mojo test -I src/ test/
+
+  build:
+    aliases: [ "b" ]
+    cmds:
+      - mkdir -p build/
+      - magic run mojo build src/main.mojo -o build/jojo-cli # --target-platform=$TARGET_PLATFORM
+
+  release:
+    aliases: [ "rel", "publish" ]
+    cmds:
+      - task: build
+      - magic run mojo publish
+
+  package:
+    aliases: [ "p", "pack" ]
+    cmds:
+      - mkdir -p build/
+      - magic run mojo package src/ -o build/jojo-cli.mojopkg
