@@ -6,7 +6,13 @@ name = "jojo-cli"
 platforms = ["osx-arm64"]
 version = "0.1.0"
 
+#
+# 类似 rust cargo 的 [[bin]]
+#
 [tasks]
+cli = "mojo src/main.mojo" # exec build
+cli2 = "mojo src/main.mojo"
+
 
 [dependencies]
 max = ">=24.5.0,<25"

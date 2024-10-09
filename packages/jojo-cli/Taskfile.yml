@@ -15,6 +15,12 @@ tasks:
     cmds:
       - magic run mojo src/main.mojo
 
+  dev2:
+    aliases: [ "d2" ]
+    cmds:
+      - magic run cli
+      - magic run cli2
+
   test:
     aliases: [ "t" ]
     cmds:

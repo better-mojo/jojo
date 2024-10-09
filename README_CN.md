@@ -79,3 +79,10 @@
 
 [14]: https://github.com/sanic-org/sanic
 
+### Docs
+
+- [mojo package 指令](https://docs.modular.com/mojo/cli/package)
+- [magic 使用教程](https://docs.modular.com/max/tutorials/magic)
+- https://prefix.dev/
+- https://github.com/prefix-dev/rattler-build
+- https://prefix-dev.github.io/rattler-build/latest/
