@@ -4,3 +4,18 @@ tasks:
   default:
     cmds:
       - echo 'hello'
+
+  pkg:
+    aliases: [ "pm", "magic" ]
+    cmds:
+      - magic {{.CLI_ARGS}}
+
+  dev:
+    aliases: [ "d" ]
+    cmds:
+      - magic run mojo src/main.mojo
+
+  test:
+    aliases: [ "t" ]
+    cmds:
+      - magic run mojo test -I src/ test/

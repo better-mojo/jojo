@@ -5,25 +5,25 @@ version: "3"
 #
 includes:
   jojo:
-    aliases: [ 'j', 'jo']
+    aliases: ["j", "jo"]
     taskfile: packages/jojo
     dir: packages/jojo
     optional: true
 
   jojo-cli:
-    aliases: [ 'jcl', ]
+    aliases: ["jcl", "jc"]
     taskfile: packages/jojo-cli
     dir: packages/jojo-cli
     optional: true
 
   jojo-core:
-    aliases: [ 'jco', ]
+    aliases: ["jco"]
     taskfile: packages/jojo-core
     dir: packages/jojo-core
     optional: true
 
   jojo-http:
-    aliases: [ 'jh', ]
+    aliases: ["jh"]
     taskfile: packages/jojo-http
     dir: packages/jojo-http
     optional: true
@@ -56,12 +56,12 @@ tasks:
       - task: install
 
   install:
-    aliases: [ 'i' ]
+    aliases: ["i"]
     cmds:
       - task: install:magic
 
   install:magic:
-    aliases: [ 'ipm', 'ipkg' ]
+    aliases: ["ipm", "ipkg"]
     cmds:
       - curl -ssL https://magic.modular.com/70e02269-abfd-4ed6-aac8-fc2b7d61b954 | bash
 
@@ -74,14 +74,13 @@ tasks:
     cmds:
       - magic run mojo format -l 120
 
-
   ################################################################################
 
   new:
-    aliases: [ 'n' ]
+    aliases: ["n"]
     cmds:
       - magic init {{.CLI_ARGS}} --format mojoproject
-    dir: 'packages/'
+    dir: "packages/"
 
   ################################################################################
 
@@ -92,7 +91,7 @@ tasks:
   ##################################################################################################
 
   quick:
-    aliases: [ 'q' ]
+    aliases: ["q"]
     cmds:
       - task: cc
       - task: push
@@ -103,7 +102,7 @@ tasks:
       - task: commit
 
   commit:
-    aliases: [ 'c' ]
+    aliases: ["c"]
     cmds:
       - git add .
       - git commit -m "update"
