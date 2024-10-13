@@ -57,12 +57,19 @@ tasks:
       - mkdir -p build/
       - magic run package
 
-  release:
-    aliases: [ "rel" ]
+  build:
+    aliases: [ "b" ]
     cmds:
       - mkdir -p build/
       - magic run build
-      - magic run rattler-build upload prefix -c "jojo"
+    ignore_error: true
+
+  build:clean:
+    aliases: [ "bc" ]
+    cmds:
+      - rm -rf output/
+      - mkdir -p build/
+      - magic run build
     ignore_error: true
 
   #
@@ -93,13 +100,8 @@ tasks:
       - open https://prefix.dev/channels/jojo
     ignore_error: true
 
-  release:clean:
-    aliases: [ "rel:c" ]
+  release:
+    aliases: [ "rel" ]
     cmds:
-      - rm -rf output/
-      - mkdir -p build/
-      - magic run build
-    ignore_error: true
-
-
-
+      - task: build
+      - task: publish

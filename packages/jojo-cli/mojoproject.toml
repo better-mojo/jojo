@@ -16,3 +16,6 @@ cli2 = "mojo src/main.mojo"
 
 [dependencies]
 max = ">=24.5.0,<25"
+jojo_core = ">=0.1.1,<0.2"
+lightbug_http = ">=0.1.4,<0.2"
+

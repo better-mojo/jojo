@@ -11,7 +11,9 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/bzip2-1.0.8-h99b78c6_7.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/ca-certificates-2024.8.30-hf0a4a13_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/click-8.1.7-unix_pyh707e725_0.conda
+      - conda: https://repo.prefix.dev/mojo-community/osx-arm64/gojo-0.1.9-h60d57d3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/importlib-metadata-8.5.0-pyha770c72_0.conda
+      - conda: https://repo.prefix.dev/jojo/osx-arm64/jojo_core-0.1.1-h60d57d3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/jupyter_client-8.6.3-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/jupyter_core-5.7.2-pyh31011fe_1.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/krb5-1.21.3-h237132a_0.conda
@@ -28,6 +30,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/libsodium-1.0.20-h99b78c6_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/libsqlite-3.46.1-hc14010f_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/libzlib-1.3.1-h8359307_2.conda
+      - conda: https://repo.prefix.dev/mojo-community/osx-arm64/lightbug_http-0.1.4-h60d57d3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/llvm-openmp-19.1.0-h6cdba0f_1.conda
       - conda: https://conda.modular.com/max/noarch/max-24.5.0-release.conda
       - conda: https://conda.modular.com/max/osx-arm64/max-core-24.5.0-release.conda
@@ -47,6 +50,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pyzmq-26.2.0-py312hc6335d2_2.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/readline-8.2-h92ec313_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/six-1.16.0-pyh6c4a22f_0.tar.bz2
+      - conda: https://repo.prefix.dev/mojo-community/osx-arm64/small_time-0.1.3-h60d57d3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/tk-8.6.13-h5083fa2_1.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/tornado-6.4.1-py312h024a12e_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/traitlets-5.14.3-pyhd8ed1ab_0.conda
@@ -98,6 +102,20 @@ packages:
   size: 84437
   timestamp: 1692311973840
 - kind: conda
+  name: gojo
+  version: 0.1.9
+  build: h60d57d3_0
+  subdir: osx-arm64
+  url: https://repo.prefix.dev/mojo-community/osx-arm64/gojo-0.1.9-h60d57d3_0.conda
+  sha256: 4c268d0d8d5f1b78a547e78a3db9e8037143918cd1d696f5adb5db55942cef5e
+  depends:
+  - max >=24.5.0,<24.6.0
+  arch: arm64
+  platform: osx
+  license: MIT
+  size: 1009999
+  timestamp: 1726268309700
+- kind: conda
   name: importlib-metadata
   version: 8.5.0
   build: pyha770c72_0
@@ -113,6 +131,20 @@ packages:
   license_family: APACHE
   size: 28646
   timestamp: 1726082927916
+- kind: conda
+  name: jojo_core
+  version: 0.1.1
+  build: h60d57d3_0
+  subdir: osx-arm64
+  url: https://repo.prefix.dev/jojo/osx-arm64/jojo_core-0.1.1-h60d57d3_0.conda
+  sha256: 7b20cc2f460bd2e09b28a7d08f60b028e49ea8110317b11ea299d8e90e538457
+  depends:
+  - max >=24.5.0
+  arch: arm64
+  platform: osx
+  license: MIT
+  size: 267967
+  timestamp: 1728474156896
 - kind: conda
   name: jupyter_client
   version: 8.6.3
@@ -384,6 +416,22 @@ packages:
   license_family: Other
   size: 46438
   timestamp: 1727963202283
+- kind: conda
+  name: lightbug_http
+  version: 0.1.4
+  build: h60d57d3_0
+  subdir: osx-arm64
+  url: https://repo.prefix.dev/mojo-community/osx-arm64/lightbug_http-0.1.4-h60d57d3_0.conda
+  sha256: 9943f6c3ad4ce7910f5cf44db6e55df887508cb3dce68ddc1657c3f72f6999f6
+  depends:
+  - max >=24.5.0
+  - gojo ==0.1.9
+  - small_time ==0.1.3
+  arch: arm64
+  platform: osx
+  license: MIT
+  size: 670587
+  timestamp: 1726916362873
 - kind: conda
   name: llvm-openmp
   version: 19.1.0
@@ -702,6 +750,20 @@ packages:
   license_family: MIT
   size: 14259
   timestamp: 1620240338595
+- kind: conda
+  name: small_time
+  version: 0.1.3
+  build: h60d57d3_0
+  subdir: osx-arm64
+  url: https://repo.prefix.dev/mojo-community/osx-arm64/small_time-0.1.3-h60d57d3_0.conda
+  sha256: 8f08a189fa15d96e6dc8b0cc49aecaefe9caf5a8209ca3ab5d2da91b7e13a3ba
+  depends:
+  - max >=24.5.0,<25
+  arch: arm64
+  platform: osx
+  license: MIT
+  size: 404869
+  timestamp: 1726265944269
 - kind: conda
   name: tk
   version: 8.6.13
