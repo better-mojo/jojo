@@ -31,6 +31,15 @@ tasks:
     cmds:
       - mkdir -p build/
       - magic run mojo build src/main.mojo -o build/jojo-cli # --target-platform=$TARGET_PLATFORM
+      - open build/
+    ignore_error: true
+
+  build:run:
+    aliases: [ "br", "rb" ]
+    cmds:
+      - task: build
+      - ./build/jojo-cli
+    ignore_error: true
 
   release:
     aliases: [ "rel", "publish" ]
