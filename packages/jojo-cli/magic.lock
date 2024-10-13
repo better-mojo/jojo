@@ -13,7 +13,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/click-8.1.7-unix_pyh707e725_0.conda
       - conda: https://repo.prefix.dev/mojo-community/osx-arm64/gojo-0.1.9-h60d57d3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/importlib-metadata-8.5.0-pyha770c72_0.conda
-      - conda: https://repo.prefix.dev/jojo/osx-arm64/jojo_core-0.1.1-h60d57d3_0.conda
+      - conda: https://repo.prefix.dev/jojo/osx-arm64/jojo_core-0.1.3-h60d57d3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/jupyter_client-8.6.3-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/jupyter_core-5.7.2-pyh31011fe_1.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/krb5-1.21.3-h237132a_0.conda
@@ -133,18 +133,18 @@ packages:
   timestamp: 1726082927916
 - kind: conda
   name: jojo_core
-  version: 0.1.1
+  version: 0.1.3
   build: h60d57d3_0
   subdir: osx-arm64
-  url: https://repo.prefix.dev/jojo/osx-arm64/jojo_core-0.1.1-h60d57d3_0.conda
-  sha256: 7b20cc2f460bd2e09b28a7d08f60b028e49ea8110317b11ea299d8e90e538457
+  url: https://repo.prefix.dev/jojo/osx-arm64/jojo_core-0.1.3-h60d57d3_0.conda
+  sha256: e0ff844ea828a600a809a12f027bdfb864ed32e295220278f78260313e53df4d
   depends:
   - max >=24.5.0
   arch: arm64
   platform: osx
   license: MIT
-  size: 267967
-  timestamp: 1728474156896
+  size: 269516
+  timestamp: 1728813086262
 - kind: conda
   name: jupyter_client
   version: 8.6.3

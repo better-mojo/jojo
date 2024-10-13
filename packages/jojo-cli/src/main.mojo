@@ -1,8 +1,10 @@
 from core import cli
 
-import gojo
-import lightbug_http
+from jojo_core.app import version
 
 fn main():
+    var v = version()
+    print(v)
+
     _ = cli()
 
