@@ -2,14 +2,14 @@
 authors = ["hhglory <hhglory@outlook.com>"]
 channels = ["conda-forge", "https://conda.modular.com/max"]
 description = "Add a short description here"
-name = "jojo-core"
+name = "jojo_core"
 platforms = ["osx-arm64", "linux-64"]
 version = "0.1.0"
 
 [tasks]
 build = { cmd = "rattler-build build --recipe recipes/ -c https://conda.modular.com/max -c conda-forge --skip-existing=all" }
 publish = { cmd = "bash scripts/publish.sh", env = { PREFIX_API_KEY = "$PREFIX_API_KEY" } }
-package = { cmd = "mojo package src/ -o build/jojo-core.mojopkg"}
+package = { cmd = "mojo package src/jojo_core -o build/jojo_core.mojopkg"}
 
 [dependencies]
 max = ">=24.5.0,<25"

@@ -1,5 +1,5 @@
 from testing import assert_equal, assert_false, assert_raises, assert_true
-from core import cli
+from core import cli, version
 
 def test_echo():
     assert_equal(1, 1)
@@ -11,3 +11,8 @@ def test_echo():
 def test_cli():
     var ret = cli()
     print(ret)
+
+
+def test_cli_version():
+    var ver = version()
+    print(ver)

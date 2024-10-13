@@ -18,6 +18,16 @@ tasks:
     cmds:
       - magic run mojo src/run.mojo
 
+  run:example:
+    aliases: [ 'r', ]
+    cmds:
+      - magic run mojo examples/run_mojopkg.mojo
+
+  test:
+    aliases: [ 't', ]
+    cmds:
+      - magic run mojo test -I src/ test/
+
   venv:
     cmds:
       - magic shell
@@ -51,17 +61,20 @@ tasks:
       - magic add rattler-build --feature dev
       - pixi global install rattler-build
 
+  # 打包成 .mojopkg
   package:
     aliases: [ "pack" ]
     cmds:
       - mkdir -p build/
       - magic run package
 
+  # 打包 .conda, 待发布
   build:
     aliases: [ "b" ]
     cmds:
       - mkdir -p build/
       - magic run build
+      - open output/
     ignore_error: true
 
   build:clean:
