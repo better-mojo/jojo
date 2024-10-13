@@ -101,6 +101,7 @@ tasks:
           magic run rattler-build upload prefix -c "jojo" \
             --api-key=$PREFIX_DEV_API_KEY \
             {{.ITEM}}
+      - open https://prefix.dev/channels/jojo
 
   publish:manual:
     aliases: [ "pub:m", "up:m" ]
