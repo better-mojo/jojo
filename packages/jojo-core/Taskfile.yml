@@ -61,6 +61,11 @@ tasks:
       - magic add rattler-build --feature dev
       - pixi global install rattler-build
 
+  install:dev:
+    cmds:
+      - magic global install rattler-build --channel conda-forge
+      - rattler-build -h
+
   # 打包成 .mojopkg
   package:
     aliases: [ "pack" ]
